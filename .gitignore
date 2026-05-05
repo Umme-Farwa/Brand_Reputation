@@ -1,0 +1,9 @@
+# Ignore Excel files
+data/raw/*.xlsx
+data/processed/*.xlsx
+data/raw/*.csv
+data/processed/*.csv
+
+# Ignore Python temporary files
+__pycache__/
+*.pyc
