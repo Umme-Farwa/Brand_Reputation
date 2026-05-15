@@ -215,12 +215,3 @@ Possible future enhancements include:
 
 ---
 
-# Research Objective
-
-The objective of this project is to explore how AI-based multi-agent systems can support automated reputation monitoring and reputational risk analysis using multilingual online customer feedback.
-
----
-
-
-```
-```
