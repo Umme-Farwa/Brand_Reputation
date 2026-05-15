@@ -1,4 +1,4 @@
-````md
+
 # KIKO Milano AI Reputation Monitoring System
 
 ## Project Overview
@@ -14,9 +14,6 @@ The architecture follows a modular multi-agent design where different agents han
 
 The project aims to support automated reputation analysis through sentiment evaluation, contextual threat categorization, and visual reporting dashboards.
 
-
----
-
 # Features
 
 - Multi-agent architecture
@@ -29,9 +26,6 @@ The project aims to support automated reputation analysis through sentiment eval
 - Validation metrics and temporal analysis
 - Visual reputation dashboards
 
-
----
-
 # Project Architecture
 
 | Agent                 | Responsibility                                         |
@@ -43,7 +37,6 @@ The project aims to support automated reputation analysis through sentiment eval
 | Reporter Agent        | Creates graphical dashboards and reports               |
 | Orchestrator          | Runs the complete pipeline automatically               |
 
----
 
 # Data Sources
 
@@ -52,9 +45,6 @@ Structured customer reviews collected using Apify.
 
 ## YouTube Data API
 Customer comments collected from YouTube videos related to KIKO Milano reviews and product experiences.
-
-
----
 
 # Threat Categories
 
@@ -67,9 +57,6 @@ The system currently identifies the following reputational threats:
 - Delivery Issues
 
 The current implementation uses contextual rule-based threat analysis with negation handling to reduce false positives.
-
-
----
 
 # Multilingual Processing
 
@@ -91,9 +78,6 @@ The system performs:
 
 This improves the realism and effectiveness of the reputation monitoring pipeline.
 
-
----
-
 # Validation Metrics
 
 The validation layer includes:
@@ -106,30 +90,6 @@ The validation layer includes:
 
 Generated visualizations help identify reputation risks across platforms.
 
-
----
-
-# Repository Structure
-
-```text
-KIKO_REPUTATION_PROJECT/
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── reports/
-│
-├── Src/
-│   └── kiko agents/
-│
-├── Requirements.txt
-├── README.md
-└── .gitignore
-````
-
----
-
 # Installation
 
 Install all dependencies:
@@ -137,8 +97,6 @@ Install all dependencies:
 ```bash
 pip install -r Requirements.txt
 ```
-
----
 
 # Running the Project
 
@@ -154,8 +112,6 @@ The orchestrator automatically executes:
 2. Threat Detector Agent
 3. Validation Agent
 4. Reporter Agent
-
----
 
 # Generated Outputs
 
@@ -176,8 +132,6 @@ Generated report:
 reports/kiko_reputation_report.png
 ```
 
----
-
 # Technologies Used
 
 * Python
@@ -189,8 +143,6 @@ reports/kiko_reputation_report.png
 * LangDetect
 * YouTube Data API
 
----
-
 # Current Limitations
 
 The current system is a lightweight research prototype and still has some limitations:
@@ -199,8 +151,6 @@ The current system is a lightweight research prototype and still has some limita
 * Limited semantic understanding
 * No real-time streaming analysis
 * Basic sentiment modeling
-
----
 
 # Future Improvements
 
@@ -212,6 +162,3 @@ Possible future enhancements include:
 * Advanced multilingual language models
 * Machine learning threat classification
 * Context-aware semantic analysis
-
----
-
