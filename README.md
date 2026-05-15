@@ -147,8 +147,8 @@ reports/kiko_reputation_report.png
 * YouTube Data API
 # Dashboard Preview
 
-![Dashboard](reports/kiko_reputation_report.png)
+![Dashboard](./reports/kiko_reputation_report.png)
 
 # Temporal Threat Analysis
 
-![Temporal Analysis](reports/temporal_threat_analysis.png)
+![Temporal Analysis](./reports/temporal_threat_analysis.png)
