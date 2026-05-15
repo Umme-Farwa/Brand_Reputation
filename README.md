@@ -34,15 +34,14 @@ The project aims to support automated reputation analysis through sentiment eval
 
 # Project Architecture
 
-| Agent | Responsibility |
-|---|---|
-| Collector Agent | Collects YouTube comments using YouTube Data API |
-| Parser Agent | Cleans, translates, and integrates datasets |
+| Agent                 | Responsibility                                         |
+| --------------------- | ------------------------------------------------------ |
+| Collector Agent       | Collects YouTube comments using YouTube Data API       |
+| Parser Agent          | Cleans, translates, and integrates datasets            |
 | Threat Detector Agent | Detects reputational threats using contextual analysis |
-| Validation Agent | Generates quantitative evaluation metrics |
-| Reporter Agent | Creates graphical dashboards and reports |
-| Orchestrator | Runs the complete pipeline automatically |
-
+| Validation Agent      | Generates quantitative evaluation metrics              |
+| Reporter Agent        | Creates graphical dashboards and reports               |
+| Orchestrator          | Runs the complete pipeline automatically               |
 
 ---
 
