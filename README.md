@@ -145,7 +145,6 @@ reports/kiko_reputation_report.png
 * Deep Translator
 * LangDetect
 * YouTube Data API
-
 # Dashboard Preview
 
 ![Dashboard](reports/kiko_reputation_report.png)
