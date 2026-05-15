@@ -1,0 +1,21 @@
+========================================
+QUANTITATIVE EVALUATION METRICS
+========================================
+
+Total Reviews Analyzed: 658
+Total Threats Detected: 69
+
+Sentiment Distribution:
+threat_category
+Neutral/Positive           589
+Fraud & Scam Threat         27
+Customer Service Threat     19
+Product Quality Threat      13
+Health & Safety Threat      10
+Name: count, dtype: int64
+
+Precision Score: 86.96%
+True Positives (Verified): 60
+False Positives (Noise): 9
+
+========================================

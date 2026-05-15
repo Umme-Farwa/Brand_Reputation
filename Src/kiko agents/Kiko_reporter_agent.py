@@ -16,18 +16,24 @@ def generate_kiko_report():
         'kiko_threat_report.csv'
     )
 
+    # =========================================
+    # CHECK FILE
+    # =========================================
     if not os.path.exists(file_path):
 
         print(f"❌ Error: File not found! Path: {file_path}")
         return
 
-    # Load data
+    # =========================================
+    # LOAD DATA
+    # =========================================
     df = pd.read_csv(file_path)
 
-    # Style
+    # =========================================
+    # STYLE
+    # =========================================
     sns.set_theme(style="whitegrid")
 
-    # Main Figure
     fig = plt.figure(figsize=(16, 10))
 
     plt.subplots_adjust(
@@ -83,7 +89,7 @@ def generate_kiko_report():
         }
     )
 
-    # Donut center
+    # Donut effect
     centre_circle = plt.Circle(
         (0, 0),
         0.70,
@@ -123,7 +129,9 @@ def generate_kiko_report():
     ax = sns.barplot(
         x=avg_rating.index,
         y=avg_rating.values,
-        palette="YlGnBu"
+        hue=avg_rating.index,
+        palette="YlGnBu",
+        legend=False
     )
 
     plt.title(
@@ -231,13 +239,25 @@ def generate_kiko_report():
     )
 
     # =========================================
-    # SAVE REPORT
+    # CREATE REPORTS FOLDER
     # =========================================
-    report_path = os.path.join(
+    reports_dir = os.path.join(
         current_dir,
         '..',
         '..',
-        'reports',
+        'reports'
+    )
+
+    os.makedirs(
+        reports_dir,
+        exist_ok=True
+    )
+
+    # =========================================
+    # SAVE REPORT
+    # =========================================
+    report_path = os.path.join(
+        reports_dir,
         'kiko_reputation_report.png'
     )
 
@@ -251,7 +271,9 @@ def generate_kiko_report():
 
     print("✅ Report Displayed Successfully!")
 
-    # Show graph
+    # =========================================
+    # SHOW REPORT
+    # =========================================
     plt.show()
 
 

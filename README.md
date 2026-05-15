@@ -14,6 +14,7 @@ The architecture follows a modular multi-agent design where different agents han
 
 The project aims to support automated reputation analysis through sentiment evaluation, contextual threat categorization, and visual reporting dashboards.
 
+
 # Features
 
 - Multi-agent architecture
@@ -25,6 +26,7 @@ The project aims to support automated reputation analysis through sentiment eval
 - Automated report generation
 - Validation metrics and temporal analysis
 - Visual reputation dashboards
+
 
 # Project Architecture
 
