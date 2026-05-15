@@ -142,23 +142,3 @@ reports/kiko_reputation_report.png
 * Deep Translator
 * LangDetect
 * YouTube Data API
-
-# Current Limitations
-
-The current system is a lightweight research prototype and still has some limitations:
-
-* Rule-based threat detection instead of deep contextual NLP
-* Limited semantic understanding
-* No real-time streaming analysis
-* Basic sentiment modeling
-
-# Future Improvements
-
-Possible future enhancements include:
-
-* Transformer-based NLP models
-* Real-time reputation monitoring
-* Dashboard web application
-* Advanced multilingual language models
-* Machine learning threat classification
-* Context-aware semantic analysis
