@@ -5,9 +5,9 @@ from langdetect import detect
 from textblob import TextBlob
 
 
-# =========================================
+
 # 1. SENTIMENT ANALYSIS LOGIC
-# =========================================
+
 def get_sentiment_rating(text):
 
     try:
@@ -39,9 +39,9 @@ def get_sentiment_rating(text):
         return 3
 
 
-# =========================================
+
 # 2. TRANSLATOR LOGIC
-# =========================================
+#
 def universal_translator(text, index, total):
 
     try:
@@ -71,9 +71,8 @@ def universal_translator(text, index, total):
         return str(text)
 
 
-# =========================================
 # 3. MAIN PARSER
-# =========================================
+
 def run_kiko_parser():
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -95,12 +94,12 @@ def run_kiko_parser():
 
     final_data = []
 
-    # =========================================
+    
     # LOAD YOUTUBE DATA
-    # =========================================
+   
     if os.path.exists(yt_file):
 
-        print("📂 Reading YouTube Data...")
+        print("Reading YouTube Data...")
 
         df_yt = pd.read_csv(yt_file)
 
@@ -141,12 +140,12 @@ def run_kiko_parser():
                 'original_rating': None
             })
 
-    # =========================================
+   
     # LOAD TRUSTPILOT DATA
-    # =========================================
+    
     if os.path.exists(tp_file):
 
-        print("📂 Reading Trustpilot Data...")
+        print("Reading Trustpilot Data...")
 
         df_tp = pd.read_excel(
             tp_file,
@@ -166,7 +165,7 @@ def run_kiko_parser():
             subset=['reviewDescription']
         )
 
-        print(f"✅ Unique Trustpilot Reviews: {len(df_tp)}")
+        print(f"Unique Trustpilot Reviews: {len(df_tp)}")
 
         for _, row in df_tp.iterrows():
 
@@ -193,9 +192,9 @@ def run_kiko_parser():
                 )
             })
 
-    # =========================================
+   
     # FINAL PROCESSING
-    # =========================================
+   
     if final_data:
 
         df_final = pd.DataFrame(final_data)
@@ -225,9 +224,9 @@ def run_kiko_parser():
 
         print("🚀 Starting NLP Pipeline...")
 
-        # =========================================
+       
         # TRANSLATION
-        # =========================================
+       
         translated_reviews = []
 
         for i, rev in enumerate(
@@ -244,9 +243,9 @@ def run_kiko_parser():
 
         df_final['review_en'] = translated_reviews
 
-        # =========================================
+    
         # FINAL RATING LOGIC
-        # =========================================
+        
         final_ratings = []
 
         for _, row in df_final.iterrows():
@@ -269,9 +268,9 @@ def run_kiko_parser():
 
         df_final['rating'] = final_ratings
 
-        # =========================================
+        
         # DELETE OLD FILE
-        # =========================================
+  
         if os.path.exists(output_file):
 
             os.remove(output_file)
@@ -294,22 +293,20 @@ def run_kiko_parser():
         )
 
         print(
-            f"✅ SUCCESS: Data saved at:\n{output_file}"
+            f"SUCCESS: Data saved at:\n{output_file}"
         )
 
         print(
-            f"📍 Final Row Count: {len(df_final)}"
+            f"Final Row Count: {len(df_final)}"
         )
 
     else:
 
         print(
-            "❌ Error: Raw files missing or empty."
+            "Error: Raw files missing or empty."
         )
 
-
-# =========================================
 # RUN
-# =========================================
+
 if __name__ == "__main__":
     run_kiko_parser()

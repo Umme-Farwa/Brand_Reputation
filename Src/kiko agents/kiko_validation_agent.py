@@ -5,9 +5,9 @@ import os
 
 def run_validation_metrics():
 
-    # =========================================
+
     # PATHS
-    # =========================================
+
     current_dir = os.path.dirname(
         os.path.abspath(__file__)
     )
@@ -17,25 +17,24 @@ def run_validation_metrics():
         '../../data/processed/kiko_threat_report.csv'
     )
 
-    # =========================================
     # CHECK FILE
-    # =========================================
+  
     if not os.path.exists(file_path):
 
         print(
-            "❌ Error: Report file nahi mili."
+            "Error: Report file nahi mili."
         )
 
         return
 
-    # =========================================
+    
     # LOAD DATA
-    # =========================================
+  
     df = pd.read_csv(file_path)
 
-    # =========================================
+
     # BASIC METRICS
-    # =========================================
+
     total_reviews = len(df)
 
     threats_df = df[
@@ -63,9 +62,9 @@ def run_validation_metrics():
 
     print("-" * 40)
 
-    # =========================================
+    
     # PRECISION EVALUATION
-    # =========================================
+
     tp = int(num_threats * 0.88)
 
     fp = num_threats - tp
@@ -80,9 +79,9 @@ def run_validation_metrics():
 
     print("="*40 + "\n")
 
-    # =========================================
+
     # CREATE REPORTS FOLDER
-    # =========================================
+
     reports_dir = os.path.join(
         current_dir,
         '..',
@@ -95,9 +94,9 @@ def run_validation_metrics():
         exist_ok=True
     )
 
-    # =========================================
+
     # SAVE METRICS REPORT
-    # =========================================
+
     metrics_path = os.path.join(
         reports_dir,
         'validation_metrics.txt'
@@ -129,12 +128,12 @@ def run_validation_metrics():
         f.write("="*40 + "\n")
 
     print(
-        f"✅ Validation metrics saved at:\n{metrics_path}"
+        f"Validation metrics saved at:\n{metrics_path}"
     )
 
-    # =========================================
+
     # TEMPORAL TREND ANALYSIS
-    # =========================================
+
     if 'review_date' in df.columns:
 
         plt.figure(figsize=(12, 6))
@@ -184,9 +183,9 @@ def run_validation_metrics():
             alpha=0.7
         )
 
-        # =========================================
+
         # SAVE TEMPORAL GRAPH
-        # =========================================
+  
         trend_path = os.path.join(
             reports_dir,
             'temporal_threat_analysis.png'
@@ -199,18 +198,16 @@ def run_validation_metrics():
         )
 
         print(
-            f"✅ Temporal Trend saved at:\n{trend_path}"
+            f"Temporal Trend saved at:\n{trend_path}"
         )
 
         print(
-            "📈 Generating Temporal Trend Analysis..."
+            "Generating Temporal Trend Analysis..."
         )
 
         plt.show()
 
-
-# =========================================
 # RUN
-# =========================================
+
 if __name__ == "__main__":
     run_validation_metrics()

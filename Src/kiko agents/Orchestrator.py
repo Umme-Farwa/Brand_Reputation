@@ -11,10 +11,10 @@ def clean_old_data():
 
     files_to_delete = [
 
-        # ✅ RAW FILE
+        # RAW FILE
         os.path.join(base_path, "../../data/raw/kiko_youtube_raw.csv"),
 
-        # ✅ PROCESSED FILES
+        # PROCESSED FILES
         os.path.join(base_path, "../../data/processed/kiko_final_integrated.csv"),
         os.path.join(base_path, "../../data/processed/kiko_threat_report.csv")
     ]
@@ -23,28 +23,28 @@ def clean_old_data():
         if os.path.exists(f):
             try:
                 os.remove(f)
-                print(f"✅ Deleted: {f}")
+                print(f"Deleted: {f}")
             except Exception as e:
-                print(f"⚠️ Error deleting {f}: {e}")
+                print(f"Error deleting {f}: {e}")
         else:
-            print(f"ℹ️ Already clean: {f}")
+            print(f"ℹAlready clean: {f}")
 
 
 def run_agent(agent_name, script_path):
-    print(f"\n🚀 Running: {agent_name}...")
+    print(f"\n Running: {agent_name}...")
 
     try:
         subprocess.run(['python', script_path], check=True)
         return True
 
     except Exception as e:
-        print(f"❌ Error in {agent_name}: {e}")
+        print(f"Error in {agent_name}: {e}")
         return False
 
 
 def main():
 
-    print("🔔 KIKO REPUTATION SYSTEM STARTED")
+    print("KIKO REPUTATION SYSTEM STARTED")
     start_time = time.time()
 
     # ✅ CLEAN OLD DATA
@@ -67,7 +67,7 @@ def main():
 
     duration = round(time.time() - start_time, 2)
 
-    print(f"\n🎉 DONE! Pipeline completed in {duration}s")
+    print(f"\n DONE! Pipeline completed in {duration}s")
 
 
 if __name__ == "__main__":

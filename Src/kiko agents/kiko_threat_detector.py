@@ -2,10 +2,8 @@ import pandas as pd
 import os
 import re
 
-
-# =========================================
 # NEGATIVE CONTEXT WORDS
-# =========================================
+
 NEGATIONS = [
     "no",
     "not",
@@ -16,9 +14,8 @@ NEGATIONS = [
 ]
 
 
-# =========================================
 # THREAT PATTERNS
-# =========================================
+
 THREAT_PATTERNS = {
 
     "Health & Safety Threat": [
@@ -75,9 +72,8 @@ THREAT_PATTERNS = {
 }
 
 
-# =========================================
 # CONTEXTUAL THREAT DETECTION
-# =========================================
+
 def identify_threats(text):
 
     text = str(text).lower()
@@ -115,9 +111,9 @@ def identify_threats(text):
     return "Neutral/Positive"
 
 
-# =========================================
+
 # MAIN DETECTOR
-# =========================================
+
 def run_threat_detector():
 
     current_dir = os.path.dirname(
@@ -137,7 +133,7 @@ def run_threat_detector():
     if not os.path.exists(input_file):
 
         print(
-            "❌ Error: Integrated file not found!"
+            "Error: Integrated file not found!"
         )
 
         return
@@ -145,7 +141,7 @@ def run_threat_detector():
     # Load data
     df = pd.read_csv(input_file)
 
-    print("🔍 Analyzing reviews for threats...")
+    print("Analyzing reviews for threats...")
 
     # Threat detection
     df['threat_category'] = (
@@ -167,16 +163,16 @@ def run_threat_detector():
     )
 
     print(
-        f"✅ SUCCESS: {threat_count} threats detected."
+        f"SUCCESS: {threat_count} threats detected."
     )
 
     print(
-        f"📁 Threat report saved at:\n{output_file}"
+        f"Threat report saved at:\n{output_file}"
     )
 
 
-# =========================================
+
 # RUN
-# =========================================
+
 if __name__ == "__main__":
     run_threat_detector()

@@ -70,7 +70,7 @@ def collect_kiko_youtube(api_key, query, max_videos=5):
     # ✅ OVERWRITE OLD FILE
     df.to_csv(file_path, index=False, mode='w')
 
-    print(f"✅ SUCCESS: {len(df)} unique reviews saved at {file_path}")
+    print(f"SUCCESS: {len(df)} unique reviews saved at {file_path}")
 
 
 if __name__ == "__main__":

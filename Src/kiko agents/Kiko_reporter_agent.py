@@ -16,22 +16,22 @@ def generate_kiko_report():
         'kiko_threat_report.csv'
     )
 
-    # =========================================
+    
     # CHECK FILE
-    # =========================================
+   
     if not os.path.exists(file_path):
 
         print(f"❌ Error: File not found! Path: {file_path}")
         return
 
-    # =========================================
+    
     # LOAD DATA
-    # =========================================
+    
     df = pd.read_csv(file_path)
 
-    # =========================================
+   
     # STYLE
-    # =========================================
+
     sns.set_theme(style="whitegrid")
 
     fig = plt.figure(figsize=(16, 10))
@@ -48,9 +48,9 @@ def generate_kiko_report():
         color='#1a5276'
     )
 
-    # =========================================
+    #
     # VISUAL 1 - DONUT CHART
-    # =========================================
+
     plt.subplot(2, 2, 1)
 
     threat_counts = (
@@ -115,9 +115,9 @@ def generate_kiko_report():
         pad=25
     )
 
-    # =========================================
+   
     # VISUAL 2 - BAR CHART
-    # =========================================
+    
     plt.subplot(2, 2, 2)
 
     avg_rating = (
@@ -165,9 +165,8 @@ def generate_kiko_report():
             fontweight='bold'
         )
 
-    # =========================================
     # VISUAL 3 - THREAT COMPARISON
-    # =========================================
+
     plt.subplot(2, 1, 2)
 
     threats_only = df[
@@ -208,10 +207,9 @@ def generate_kiko_report():
             ha='center',
             fontsize=14
         )
-
-    # =========================================
+   
     # FOOTER
-    # =========================================
+  
     footer = (
         f"Analyzed {len(df)} reviews | "
         f"Total Threats: {len(threats_only)}"
@@ -238,9 +236,8 @@ def generate_kiko_report():
         }
     )
 
-    # =========================================
     # CREATE REPORTS FOLDER
-    # =========================================
+  
     reports_dir = os.path.join(
         current_dir,
         '..',
@@ -253,9 +250,9 @@ def generate_kiko_report():
         exist_ok=True
     )
 
-    # =========================================
+  
     # SAVE REPORT
-    # =========================================
+
     report_path = os.path.join(
         reports_dir,
         'kiko_reputation_report.png'
@@ -271,14 +268,12 @@ def generate_kiko_report():
 
     print("✅ Report Displayed Successfully!")
 
-    # =========================================
+
     # SHOW REPORT
-    # =========================================
+
     plt.show()
 
-
-# =========================================
 # RUN
-# =========================================
+
 if __name__ == "__main__":
     generate_kiko_report()
