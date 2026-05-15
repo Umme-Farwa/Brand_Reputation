@@ -145,10 +145,4 @@ reports/kiko_reputation_report.png
 * Deep Translator
 * LangDetect
 * YouTube Data API
-# Dashboard Preview
 
-![Dashboard](./reports/kiko_reputation_report.png)
-
-# Temporal Threat Analysis
-
-![Temporal Analysis](./reports/temporal_threat_analysis.png)
