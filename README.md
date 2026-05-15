@@ -46,6 +46,9 @@ Structured customer reviews collected using Apify.
 ## YouTube Data API
 Customer comments collected from YouTube videos related to KIKO Milano reviews and product experiences.
 
+## Architecture Diagram
+<img width="1171" height="1343" alt="image" src="https://github.com/user-attachments/assets/e45d0ac8-57c3-49fa-8972-83804142c61a" />
+
 # Threat Categories
 
 The system currently identifies the following reputational threats:
