@@ -63,7 +63,6 @@ The system runs on an agentic workflow orchestrated sequentially to manage data 
 | Reporter Agent        |  Generates data-driven charts converting raw textual telemetry into visual executive assets. |
 | Orchestrator          | Runs the complete pipeline automatically               |
 
-
 ---
 
 ## Empirical Evaluation & Outputs
@@ -86,32 +85,6 @@ Upon system execution, the following charts are generated inside the `reports/` 
 
 ---
 
-## ⚙️ Quick Start Guide (Execution Steps for Evaluation)
-
-Follow these precise instructions to provision the environment, resolve system dependencies, and execute the multi-agent orchestration layer.
-
-### Prerequisites
-*   Python 3.8 or higher installed globally.
-*   Internet access for real-time translation and dependency fetching.
-
-### Step 1: Clone the Repository
-Open a terminal workspace or command prompt window and run:
-```bash
-git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
-cd Brand_Reputation
-
-### **Step 2:Initialize Virtual Environment**
-Initialize an isolated environment sandbox to manage dependencies cleanly:
-
-Bash
-# Windows
-python -m venv env
-.\env\Scripts\activate
-
-# macOS / Linux
-python3 -m venv env
-source env/bin/activate
-
 # Data Sources
 
 ## Trustpilot Dataset
@@ -119,9 +92,6 @@ Structured customer reviews collected using Apify.
 
 ## YouTube Data API
 Customer comments collected from YouTube videos related to KIKO Milano reviews and product experiences.
-
-## Architecture Diagram
-<img width="1171" height="1343" alt="image" src="https://github.com/user-attachments/assets/e45d0ac8-57c3-49fa-8972-83804142c61a" />
 
 # Threat Categories
 
@@ -167,47 +137,74 @@ The validation layer includes:
 
 Generated visualizations help identify reputation risks across platforms.
 
-# Installation
+### 🖼️ Executed Pipeline Analytics (Output Graphs)
+
+Below are the actual visual insights generated automatically by the pipeline and saved directly under the `reports/` folder:
+
+### 1. KIKO Brand Reputation Dashboard Report
+*This dashboard illustrates the threat distribution donut chart, average sentiment ratings mapped on a 1–5 scale, and cross-platform analysis between Trustpilot and YouTube[cite: 2].*
+
+![KIKO Brand Reputation Report](reports/kiko_reputation_report.png)
+
+### 2. Temporal Threat Analysis & Volume Trends
+*This chart tracks the chronological frequency and volume patterns of incoming reviews, highlighting specific timeline spikes where potential reputational threats were flagged[cite: 2].*
+
+![Temporal Threat Analysis](reports/temporal_threat_analysis.png)
+
+*Note: The model validation data, raw logs, and textual distribution summaries are documented concurrently inside `reports/validation_metrics.txt`[cite: 2].*
+
+# **Quick Start Guide (Execution Steps for Evaluation)**
+Follow these precise instructions to provision the environment, resolve system dependencies, and execute the multi-agent orchestration layer.
+
+### Prerequisites
+*   Python 3.8 or higher installed globally.
+*   Internet access for real-time translation and dependency fetching.
+  
+### Step 1: Clone the Repository
+Open a terminal workspace or command prompt window and run:
+```bash
+git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
+cd Brand_Reputation
+```
+### Step 2:Initialize Virtual Environment
+# Windows
+python -m venv env
+.\env\Scripts\activate
+
+# macOS / Linux
+python3 -m venv env
+source env/bin/activate
+
+# Install Project Dependencies
 
 Install all dependencies:
 
 ```bash
-pip install -r Requirements.txt
+pip install -r "Src/kiko agents/Requirements.txt"
 ```
+**IMPORTANT NOTE: Setup YouTube API Credentials**
+Before running the Collector Agent, you must configure your personal Google Cloud Developer credentials for the YouTube Data API:
 
-# Running the Project
+Obtain an API key from the Google Cloud Console.
 
-Run the complete automated pipeline:
+Enable the YouTube Data API v3 for your project.
+
+Open Src/kiko agents/kiko_collector_agent.py and replace the placeholder API key variable with your own credentials:
+
+**YOUTUBE_API_KEY = "YOUR_ACTUAL_API_KEY_HERE"**
+
+# Run th Multi-agent Pipeline
 
 ```bash
-python Orchestrator.py
+python "Src/kiko agents/Main.py"
 ```
 
-The orchestrator automatically executes:
+The orchestrator (Main.py) automatically executes:
 
 1. Parser Agent
 2. Threat Detector Agent
 3. Validation Agent
 4. Reporter Agent
-
-# Generated Outputs
-
-## Processed Data
-
-Generated files:
-
-```text
-data/processed/kiko_final_integrated.csv
-data/processed/kiko_threat_report.csv
-```
-
-## Visual Reports
-
-Generated report:
-
-```text
-reports/kiko_reputation_report.png
-```
 
 # Technologies Used
 
