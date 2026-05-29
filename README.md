@@ -10,12 +10,34 @@ This repository contains a fully functional, modular **Multi-Agent AI System** d
 *   **Contextual Threat Detection:** Identifying high-risk reputational threats including *Fraud & Scam*, *Product Quality*, *Customer Service*, and *Health & Safety* concerns.
 *   **Quantitative Validation & Reporting:** Evaluating pipeline accuracy through precise empirical metrics and outputting visual trend dashboards.
 
----
-
 ## 🤖 Multi-Agent Architecture & Flow
 
 The system runs on an agentic workflow orchestrated sequentially to manage data pipeline execution without duplication.
 
+              ┌──────────────────────────────┐
+              │      1. COLLECTOR AGENT      │ <── Ingests Trustpilot (Apify) & YouTube API
+              └──────────────┬───────────────┘
+                             │ ──> Generates: kiko_trustpilot_raw.xlsx & kiko_youtube_raw.csv
+                             v
+              ┌──────────────────────────────┐
+              │        2. PARSER AGENT       │ <── Cleans text, detects language & translates
+              └──────────────┬───────────────┘
+                             │ ──> Generates Unified Format: kiko_final_integrated.csv
+                             v
+              ┌──────────────────────────────┐
+              │    3. THREAT DETECTOR AGENT  │ <── Keyword mapping, sentiment filtering & rules
+              └──────────────┬───────────────┘
+                             │ ──> Generates: kiko_threat_report.csv
+                             v
+              ┌──────────────────────────────┐
+              │      4. VALIDATION AGENT     │ <── Calculates precision & temporal trend lines
+              └──────────────┬───────────────┘
+                             │ ──> Generates: validation_metrics.txt & temporal_threat_analysis.png
+                             v
+              ┌──────────────────────────────┐
+              │       5. REPORTER AGENT      │ <── Compiles donut charts & sentiment distribution
+              └──────────────────────────────┘
+                               ──> Generates Final Dashboard: kiko_reputation_report.png
 
 # Features
 
