@@ -100,9 +100,17 @@ Open a terminal workspace or command prompt window and run:
 git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
 cd Brand_Reputation
 
+**### Step 2:Initialize Virtual Environment**
+Initialize an isolated environment sandbox to manage dependencies cleanly:
 
+Bash
+# Windows
+python -m venv env
+.\env\Scripts\activate
 
-
+# macOS / Linux
+python3 -m venv env
+source env/bin/activate
 
 # Data Sources
 
