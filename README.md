@@ -63,26 +63,20 @@ The system runs on an agentic workflow orchestrated sequentially to manage data 
 | Reporter Agent        |  Generates data-driven charts converting raw textual telemetry into visual executive assets. |
 | Orchestrator          | Runs the complete pipeline automatically               |
 
-### Deep Dive into Agent Roles:
-1.  **Collector Agent:** Connects to Apify and YouTube Data API to harvest raw feedback while preserving critical metadata (timestamps, rating scores).
-2.  **Parser Agent:** Uses `LangDetect` and `Deep Translator` to normalize text, remove duplicate entries, and assign base sentiment ratings using `TextBlob`.
-3.  **Threat Detector Agent:** Evaluates contextual rule-based risks (e.g., mapping expressions regarding skin irritation to *Health & Safety* or delivery issues to *Customer Service*).
-4.  **Validation Agent:** Tracks statistical validity, performing precision-oriented evaluations on flagged anomalies over time.
-5.  **Reporter Agent:** Generates data-driven charts converting raw textual telemetry into visual executive assets.
 
 ---
 
-## 📊 Empirical Evaluation & Outputs
+## Empirical Evaluation & Outputs
 
 The system delivers a highly reliable baseline for threat classification, verified through manual auditing metrics.
 
-### 📈 Statistical Performance Summary
+### Statistical Performance Summary
 *   **Total Reviews Analyzed:** 658  
 *   **Total Threats Flagged:** 69  
 *   **True Positives (Verified Risks):** 60  
 *   **System Precision Score:** **86.96%**  
 
-### 🗺️ Visual Analytics Dashboards
+### Visual Analytics Dashboards
 Upon system execution, the following charts are generated inside the `reports/` folder:
 
 1.  **KIKO Brand Reputation Dashboard (`reports/kiko_reputation_report.png`)**  
