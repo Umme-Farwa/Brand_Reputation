@@ -1,18 +1,20 @@
 
 # KIKO Milano AI Reputation Monitoring System
 
-## Project Overview
+Project Overview
+This repository contains a fully functional, modular **Multi-Agent AI System** designed to monitor, analyze, and quantify the digital brand reputation of **KIKO Milano**. By mining unstructured multi-platform public discourse (Trustpilot and YouTube), the system automatically processes multilingual feedback, evaluates sentiment polarity, detects specific reputational threat categories, and generates actionable analytical dashboards for strategic decision-making.
 
-This project is an AI-driven reputation monitoring prototype designed to analyze customer reviews and detect reputational threats for KIKO Milano.
+### Key Objectives
+*   **Multi-Platform Data Ingestion:** Automating large-scale extraction of structured reviews from Trustpilot (via Apify) and public comments from YouTube (via YouTube Data API).
+*   **Multilingual Support & Translation:** Automatically detecting European languages (Italian, French, German, Spanish, Dutch) and translating them to English for standardized processing.
+*   **Contextual Threat Detection:** Identifying high-risk reputational threats including *Fraud & Scam*, *Product Quality*, *Customer Service*, and *Health & Safety* concerns.
+*   **Quantitative Validation & Reporting:** Evaluating pipeline accuracy through precise empirical metrics and outputting visual trend dashboards.
 
-The system integrates data from multiple online platforms including:
+---
 
-- Trustpilot Reviews
-- YouTube Comments (via YouTube Data API)
+## 🤖 Multi-Agent Architecture & Flow
 
-The architecture follows a modular multi-agent design where different agents handle specific responsibilities such as data collection, parsing, multilingual processing, threat detection, validation, and reporting.
-
-The project aims to support automated reputation analysis through sentiment evaluation, contextual threat categorization, and visual reporting dashboards.
+The system runs on an agentic workflow orchestrated sequentially to manage data pipeline execution without duplication.
 
 
 # Features
