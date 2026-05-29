@@ -112,6 +112,7 @@ Open a terminal workspace or command prompt window and run:
 ```bash
 git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
 cd Brand_Reputation
+```
 
 # Project Architecture
 
