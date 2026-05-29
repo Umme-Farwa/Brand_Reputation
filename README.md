@@ -1,18 +1,30 @@
 
 # KIKO Milano AI Reputation Monitoring System
 
-Project Overview
+## Project Overview
 This repository contains a fully functional, modular **Multi-Agent AI System** designed to monitor, analyze, and quantify the digital brand reputation of **KIKO Milano**. By mining unstructured multi-platform public discourse (Trustpilot and YouTube), the system automatically processes multilingual feedback, evaluates sentiment polarity, detects specific reputational threat categories, and generates actionable analytical dashboards for strategic decision-making.
 
 ### Key Objectives
-*   **Multi-Platform Data Ingestion:** Automating large-scale extraction of structured reviews from Trustpilot (via Apify) and public comments from YouTube (via YouTube Data API).
-*   **Multilingual Support & Translation:** Automatically detecting European languages (Italian, French, German, Spanish, Dutch) and translating them to English for standardized processing.
-*   **Contextual Threat Detection:** Identifying high-risk reputational threats including *Fraud & Scam*, *Product Quality*, *Customer Service*, and *Health & Safety* concerns.
-*   **Quantitative Validation & Reporting:** Evaluating pipeline accuracy through precise empirical metrics and outputting visual trend dashboards.
+* **Multi-Platform Data Ingestion:** Automating large-scale extraction of structured reviews from Trustpilot (via Apify) and public comments from YouTube (via YouTube Data API).
+* **Multilingual Support & Translation:** Automatically detecting European languages (Italian, French, German, Spanish, Dutch) and translating them to English for standardized processing.
+* **Contextual Threat Detection:** Identifying high-risk reputational threats including *Fraud & Scam*, *Product Quality*, *Customer Service*, and *Health & Safety* concerns.
+* **Quantitative Validation & Reporting:** Evaluating pipeline accuracy through precise empirical metrics and outputting visual trend dashboards[cite: 2].
 
-## 🤖 Multi-Agent Architecture & Flow
+---
 
-The system runs on an agentic workflow orchestrated sequentially to manage data pipeline execution without duplication.
+## Key Features
+* Fully automated multi-agent architecture orchestrated sequentially[cite: 2].
+* YouTube Data API & Trustpilot structured review integration[cite: 2].
+* Multilingual review translation with automated language identification[cite: 2].
+* Deep sentiment analysis pipeline using customized polarity scales[cite: 2].
+* Contextual rule-based threat detection with robust negation handling[cite: 2].
+* Automated report generation, validation metrics, and temporal analysis graphs[cite: 2].
+
+---
+
+## Multi-Agent Architecture & Flow
+
+The system runs on an agentic workflow orchestrated sequentially to manage data pipeline execution without duplication[cite: 2].
 
               ┌──────────────────────────────┐
               │      1. COLLECTOR AGENT      │ <── Ingests Trustpilot (Apify) & YouTube API
@@ -105,26 +117,6 @@ The system currently identifies the following reputational threats:
 
 The current implementation uses contextual rule-based threat analysis with negation handling to reduce false positives.
 
-# Multilingual Processing
-
-The dataset contains multilingual reviews including:
-
-- English
-- Italian
-- French
-- Spanish
-- German
-- Dutch
-
-The system performs:
-
-1. Automatic language detection
-2. Translation to English
-3. Sentiment analysis
-4. Threat detection
-
-This improves the realism and effectiveness of the reputation monitoring pipeline.
-
 # Validation Metrics
 
 The validation layer includes:
@@ -137,7 +129,7 @@ The validation layer includes:
 
 Generated visualizations help identify reputation risks across platforms.
 
-### 🖼️ Executed Pipeline Analytics (Output Graphs)
+### Executed Pipeline Analytics (Output Graphs)
 
 Below are the actual visual insights generated automatically by the pipeline and saved directly under the `reports/` folder:
 
