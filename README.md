@@ -100,7 +100,7 @@ Open a terminal workspace or command prompt window and run:
 git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
 cd Brand_Reputation
 
-**### Step 2:Initialize Virtual Environment**
+### **Step 2:Initialize Virtual Environment**
 Initialize an isolated environment sandbox to manage dependencies cleanly:
 
 Bash
