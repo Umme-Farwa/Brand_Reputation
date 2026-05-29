@@ -95,7 +95,7 @@ Below are the actual visual insights generated automatically by the pipeline and
 
 ![Temporal Threat Analysis](reports/temporal_threat_analysis.png)
 
-*Note: The model validation data, raw logs, and textual distribution summaries are documented concurrently inside `reports/validation_metrics.txt`[cite: 2].*
+*Note: The model validation data, raw logs, and textual distribution summaries are documented concurrently inside `reports/validation_metrics.txt`.*
 
 ---
 
