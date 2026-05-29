@@ -13,12 +13,12 @@ This repository contains a fully functional, modular **Multi-Agent AI System** d
 ---
 
 ## Key Features
-* Fully automated multi-agent architecture orchestrated sequentially[cite: 2].
-* YouTube Data API & Trustpilot structured review integration[cite: 2].
-* Multilingual review translation with automated language identification[cite: 2].
-* Deep sentiment analysis pipeline using customized polarity scales[cite: 2].
-* Contextual rule-based threat detection with robust negation handling[cite: 2].
-* Automated report generation, validation metrics, and temporal analysis graphs[cite: 2].
+* Fully automated multi-agent architecture orchestrated sequentially.
+* YouTube Data API & Trustpilot structured review integration.
+* Multilingual review translation with automated language identification.
+* Deep sentiment analysis pipeline using customized polarity scales.
+* Contextual rule-based threat detection with robust negation handling.
+* Automated report generation, validation metrics, and temporal analysis graphs.
 
 ---
 
@@ -51,18 +51,67 @@ The system runs on an agentic workflow orchestrated sequentially to manage data 
               └──────────────────────────────┘
                                ──> Generates Final Dashboard: kiko_reputation_report.png
 
-# Features
+### Project Architecture & Roles
 
-- Multi-agent architecture
-- YouTube Data API integration
-- Trustpilot review integration
-- Multilingual review translation
-- Sentiment analysis pipeline
-- Contextual threat detection
-- Automated report generation
-- Validation metrics and temporal analysis
-- Visual reputation dashboards
+| Agent | Responsibility |
+| :--- | :--- |
+| **Collector Agent** | Connects to Apify and YouTube Data API to harvest raw feedback while preserving critical metadata (timestamps, rating scores). |
+| **Parser Agent** | Uses `LangDetect` and `Deep Translator` to normalize text, remove duplicate entries, and assign base sentiment ratings using `TextBlob`. |
+| **Threat Detector Agent** | Evaluates contextual rule-based risks (e.g., mapping expressions regarding skin irritation to *Health & Safety* or delivery issues to *Customer Service*). |
+| **Validation Agent** | Tracks statistical validity, performing precision-oriented evaluations on flagged anomalies over time. |
+| **Reporter Agent** | Generates data-driven charts converting raw textual telemetry into visual executive assets. |
+| **Orchestrator** | Central controller that cleans legacy data caches and automates the complete pipeline sequentially. |
 
+---
+
+## Empirical Evaluation & Outputs
+
+The system delivers a highly reliable baseline for threat classification, verified through manual auditing metrics.
+
+### Statistical Performance Summary
+* **Total Reviews Analyzed:** 658  
+* **Total Threats Flagged:** 69
+* **True Positives (Verified Risks):** 60 
+* **System Precision Score:** **86.96%**
+
+### Threat Categories Tracked
+The rule-based threat agent classifies data patterns with contextual negation handling under these dimensions:
+* **Health & Safety Threats** (e.g., skin irritation, allergic reactions)
+* **Fraud & Scam Threats** (e.g., stolen orders, fake profiles)
+* **Product Quality Threats** (e.g., damaged items, broken containers)
+* **Customer Service Threats** (e.g., refund issues, poor support channels)
+
+### Executed Pipeline Analytics (Output Graphs)
+
+Below are the actual visual insights generated automatically by the pipeline and saved directly under the `reports/` folder:
+
+### 1. KIKO Brand Reputation Dashboard Report
+*This dashboard illustrates the threat distribution donut chart, average sentiment ratings mapped on a 1–5 scale, and cross-platform analysis between Trustpilot and YouTube.*
+
+![KIKO Brand Reputation Report](reports/kiko_reputation_report.png)
+
+### 2. Temporal Threat Analysis & Volume Trends
+*This chart tracks the chronological frequency and volume patterns of incoming reviews, highlighting specific timeline spikes where potential reputational threats were flagged.*
+
+![Temporal Threat Analysis](reports/temporal_threat_analysis.png)
+
+*Note: The model validation data, raw logs, and textual distribution summaries are documented concurrently inside `reports/validation_metrics.txt`[cite: 2].*
+
+---
+
+## ⚙️ Quick Start Guide (Execution Steps for Evaluation)
+
+Follow these precise instructions to provision the environment, resolve system dependencies, and execute the multi-agent orchestration layer.
+
+### Prerequisites
+* Python 3.8 or higher installed globally.
+* Internet access for real-time translation and dependency fetching.
+
+### Step 1: Clone the Repository
+Open a terminal workspace or command prompt window and run:
+```bash
+git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
+cd Brand_Reputation
 
 # Project Architecture
 
