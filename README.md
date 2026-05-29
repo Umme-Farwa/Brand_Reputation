@@ -114,102 +114,8 @@ git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.co
 cd Brand_Reputation
 ```
 
-# Project Architecture
-
-| Agent                 | Responsibility                                         |
-| --------------------- | ------------------------------------------------------ |
-| Collector Agent       | Connects to Apify and YouTube Data API to harvest raw feedback while preserving critical metadata (timestamps, rating scores).   |
-| Parser Agent          | Uses `LangDetect` and `Deep Translator` to normalize text, remove duplicate entries, and assign base sentiment ratings using `TextBlob`.|
-| Threat Detector Agent | Evaluates contextual rule-based risks (e.g., mapping expressions regarding skin irritation to *Health & Safety* or delivery issues to *Customer Service*).|
-| Validation Agent      | Tracks statistical validity, performing precision-oriented evaluations on flagged anomalies over time. |
-| Reporter Agent        |  Generates data-driven charts converting raw textual telemetry into visual executive assets. |
-| Orchestrator          | Runs the complete pipeline automatically               |
-
----
-
-## Empirical Evaluation & Outputs
-
-The system delivers a highly reliable baseline for threat classification, verified through manual auditing metrics.
-
-### Statistical Performance Summary
-*   **Total Reviews Analyzed:** 658  
-*   **Total Threats Flagged:** 69  
-*   **True Positives (Verified Risks):** 60  
-*   **System Precision Score:** **86.96%**  
-
-### Visual Analytics Dashboards
-Upon system execution, the following charts are generated inside the `reports/` folder:
-
-1.  **KIKO Brand Reputation Dashboard (`reports/kiko_reputation_report.png`)**  
-    Contains threat distribution donut charts, platform comparison breakdowns, and overall average sentiment rating distributions.
-2.  **Temporal Threat Trends Line Graph (`reports/temporal_threat_analysis.png`)**  
-    Tracks fluctuations and spikes in review volumes and flagged risks over specific chronological intervals.
-
----
-
-# Data Sources
-
-## Trustpilot Dataset
-Structured customer reviews collected using Apify.
-
-## YouTube Data API
-Customer comments collected from YouTube videos related to KIKO Milano reviews and product experiences.
-
-# Threat Categories
-
-The system currently identifies the following reputational threats:
-
-- Health & Safety Threats
-- Fraud & Scam Threats
-- Product Quality Threats
-- Customer Service Threats
-- Delivery Issues
-
-The current implementation uses contextual rule-based threat analysis with negation handling to reduce false positives.
-
-# Validation Metrics
-
-The validation layer includes:
-
-- Sentiment distribution statistics
-- Threat frequency analysis
-- Precision-oriented evaluation
-- Temporal trend analysis using review dates
-- Comparative platform analysis
-
-Generated visualizations help identify reputation risks across platforms.
-
-### Executed Pipeline Analytics (Output Graphs)
-
-Below are the actual visual insights generated automatically by the pipeline and saved directly under the `reports/` folder:
-
-### 1. KIKO Brand Reputation Dashboard Report
-*This dashboard illustrates the threat distribution donut chart, average sentiment ratings mapped on a 1–5 scale, and cross-platform analysis between Trustpilot and YouTube[cite: 2].*
-
-![KIKO Brand Reputation Report](reports/kiko_reputation_report.png)
-
-### 2. Temporal Threat Analysis & Volume Trends
-*This chart tracks the chronological frequency and volume patterns of incoming reviews, highlighting specific timeline spikes where potential reputational threats were flagged[cite: 2].*
-
-![Temporal Threat Analysis](reports/temporal_threat_analysis.png)
-
-*Note: The model validation data, raw logs, and textual distribution summaries are documented concurrently inside `reports/validation_metrics.txt`[cite: 2].*
-
-# **Quick Start Guide (Execution Steps for Evaluation)**
-Follow these precise instructions to provision the environment, resolve system dependencies, and execute the multi-agent orchestration layer.
-
-### Prerequisites
-*   Python 3.8 or higher installed globally.
-*   Internet access for real-time translation and dependency fetching.
-  
-### Step 1: Clone the Repository
-Open a terminal workspace or command prompt window and run:
-```bash
-git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
-cd Brand_Reputation
-```
 ### Step 2:Initialize Virtual Environment
-# Windows
+# On Windows
 python -m venv env
 .\env\Scripts\activate
 
@@ -224,6 +130,7 @@ Install all dependencies:
 ```bash
 pip install -r "Src/kiko agents/Requirements.txt"
 ```
+
 **IMPORTANT NOTE: Setup YouTube API Credentials**
 Before running the Collector Agent, you must configure your personal Google Cloud Developer credentials for the YouTube Data API:
 
@@ -250,12 +157,10 @@ The orchestrator (Main.py) automatically executes:
 
 # Technologies Used
 
-* Python
-* Pandas
-* Matplotlib
-* Seaborn
-* TextBlob
-* Deep Translator
-* LangDetect
-* YouTube Data API
+* Python (Core Environment)
+* Pandas (Data Engineering & Integration)
+* Matplotlib & Seaborn (Statistical Data Visualizations)
+* TextBlob (Sentiment Polarity Extraction)
+* Deep Translator & LangDetect (Language Processing Core)
+* YouTube Data API (Public Video Insights Extractor)
 
