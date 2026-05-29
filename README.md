@@ -56,12 +56,58 @@ The system runs on an agentic workflow orchestrated sequentially to manage data 
 
 | Agent                 | Responsibility                                         |
 | --------------------- | ------------------------------------------------------ |
-| Collector Agent       | Collects YouTube comments using YouTube Data API       |
-| Parser Agent          | Cleans, translates, and integrates datasets            |
-| Threat Detector Agent | Detects reputational threats using contextual analysis |
-| Validation Agent      | Generates quantitative evaluation metrics              |
-| Reporter Agent        | Creates graphical dashboards and reports               |
+| Collector Agent       | Connects to Apify and YouTube Data API to harvest raw feedback while preserving critical metadata (timestamps, rating scores).   |
+| Parser Agent          | Uses `LangDetect` and `Deep Translator` to normalize text, remove duplicate entries, and assign base sentiment ratings using `TextBlob`.|
+| Threat Detector Agent | Evaluates contextual rule-based risks (e.g., mapping expressions regarding skin irritation to *Health & Safety* or delivery issues to *Customer Service*).|
+| Validation Agent      | Tracks statistical validity, performing precision-oriented evaluations on flagged anomalies over time. |
+| Reporter Agent        |  Generates data-driven charts converting raw textual telemetry into visual executive assets. |
 | Orchestrator          | Runs the complete pipeline automatically               |
+
+### Deep Dive into Agent Roles:
+1.  **Collector Agent:** Connects to Apify and YouTube Data API to harvest raw feedback while preserving critical metadata (timestamps, rating scores).
+2.  **Parser Agent:** Uses `LangDetect` and `Deep Translator` to normalize text, remove duplicate entries, and assign base sentiment ratings using `TextBlob`.
+3.  **Threat Detector Agent:** Evaluates contextual rule-based risks (e.g., mapping expressions regarding skin irritation to *Health & Safety* or delivery issues to *Customer Service*).
+4.  **Validation Agent:** Tracks statistical validity, performing precision-oriented evaluations on flagged anomalies over time.
+5.  **Reporter Agent:** Generates data-driven charts converting raw textual telemetry into visual executive assets.
+
+---
+
+## 📊 Empirical Evaluation & Outputs
+
+The system delivers a highly reliable baseline for threat classification, verified through manual auditing metrics.
+
+### 📈 Statistical Performance Summary
+*   **Total Reviews Analyzed:** 658  
+*   **Total Threats Flagged:** 69  
+*   **True Positives (Verified Risks):** 60  
+*   **System Precision Score:** **86.96%**  
+
+### 🗺️ Visual Analytics Dashboards
+Upon system execution, the following charts are generated inside the `reports/` folder:
+
+1.  **KIKO Brand Reputation Dashboard (`reports/kiko_reputation_report.png`)**  
+    Contains threat distribution donut charts, platform comparison breakdowns, and overall average sentiment rating distributions.
+2.  **Temporal Threat Trends Line Graph (`reports/temporal_threat_analysis.png`)**  
+    Tracks fluctuations and spikes in review volumes and flagged risks over specific chronological intervals.
+
+---
+
+## ⚙️ Quick Start Guide (Execution Steps for Evaluation)
+
+Follow these precise instructions to provision the environment, resolve system dependencies, and execute the multi-agent orchestration layer.
+
+### Prerequisites
+*   Python 3.8 or higher installed globally.
+*   Internet access for real-time translation and dependency fetching.
+
+### Step 1: Clone the Repository
+Open a terminal workspace or command prompt window and run:
+```bash
+git clone [https://github.com/Umme-Farwa/Brand_Reputation.git](https://github.com/Umme-Farwa/Brand_Reputation.git)
+cd Brand_Reputation
+
+
+
 
 
 # Data Sources
