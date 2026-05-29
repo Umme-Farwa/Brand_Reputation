@@ -143,7 +143,7 @@ Enable the YouTube Data API v3 for your project.
 
 Open Src/kiko agents/kiko_collector_agent.py and replace the placeholder API key variable with your own credentials:
 
-**YOUTUBE_API_KEY = "YOUR_ACTUAL_API_KEY_HERE"**
+**MY_KEY = "YOUR_ACTUAL_API_KEY_HERE"**
 
 # Run th Multi-agent Pipeline
 
