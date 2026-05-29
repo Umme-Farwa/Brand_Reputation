@@ -116,13 +116,16 @@ cd Brand_Reputation
 
 ### Step 2:Initialize Virtual Environment
 # On Windows
+```bash
 python -m venv env
 .\env\Scripts\activate
-
+```
 # macOS / Linux
+
+```bash
 python3 -m venv env
 source env/bin/activate
-
+```
 # Install Project Dependencies
 
 Install all dependencies:
