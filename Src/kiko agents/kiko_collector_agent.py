@@ -74,6 +74,6 @@ def collect_kiko_youtube(api_key, query, max_videos=5):
 
 
 if __name__ == "__main__":
-    MY_KEY = "AIzaSyBoU_xecYH6qxjt59ThBh5rsqfVKet73lg"
+    MY_KEY = "YOUR_ACTUAL_API_KEY_HERE"
     collect_kiko_youtube(MY_KEY, "Kiko Milano reviews skin reaction")
 
